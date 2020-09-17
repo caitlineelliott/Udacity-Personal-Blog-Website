@@ -1,0 +1,132 @@
+@import "navbar.css";
+@import "header-and-footer.css";
+@import "blog-cards.css";
+
+/* whole page styles */
+
+/* body & text elements */
+body {
+    background:#eef;
+    font: 11pt "roboto", sans-serif;
+    color: #30323d;
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #30323d;
+}
+
+/* vertically and horizontally centers content */
+.center-parent {
+    position: relative;
+}
+
+.center-child {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* main page styles */
+
+/* blog container */
+.blog-content {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+    background: #eef;
+}
+
+/* keeps post cards grid at full rows for lg screen sizes */
+.blog-cards:nth-child(n+10) {
+    display: none;
+}
+
+/* older posts box */
+.older-posts {
+    width: 100vw;
+    margin-left: -23px;
+    height: 8vh;
+    background: #e8C547;
+}
+
+.older-posts-icons {
+    font-weight: 400;
+}
+
+.older-posts-content {
+    font-weight: 400;
+    width: 60%;
+    text-align: center;
+}
+
+.older-posts-links {
+    color: #30323d;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.older-posts-links:hover {
+    color: #eef;
+    transition: color 300ms;
+}
+
+/* xs mobile styles - galaxy fold, moto g4, iphone x, iphone5 */
+@media screen
+and (min-width : 275px)
+and (max-width : 539px) {
+    .blog-content {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .older-posts {
+        margin-left: -8px;
+    }
+}
+
+/* tablet styles */
+
+@media screen
+and (min-width : 536px)
+and (max-width : 1024px) {
+    .blog-content {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .blog-cards:nth-child(n+10) {
+        display: inline;
+    }
+
+    .older-posts-links {
+        font-size: 3.5vw;
+    }
+
+    .older-posts {
+        margin-left: -8px;
+    }
+}
+
+/* xl screen styles */
+
+@media screen
+and (min-width : 1300px) {
+    .blog-content {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .blog-cards:nth-child(n+9) {
+        display: none;
+    }
+}
